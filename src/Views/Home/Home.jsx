@@ -17,7 +17,6 @@ const Home = () => {
     const allResponses = useSelector((state) => state.allResponses)
     const userInfo = useSelector((state) => state.user)
     const allForms = useSelector((state) => state.allForms)
-    //const access = useSelector((state)=>state.access) //sacar del local storage
     const reload = () => {
         window.location.reload(false);
     };
@@ -25,7 +24,7 @@ const Home = () => {
     const access = localStorage.getItem("access");
     const myId = localStorage.getItem("clientId");
     const userResponses = allResponses.filter(res => Number(res?.UserId) === Number(myId))
-console.log(selected);
+    console.log(selected);
 
     useEffect(() => {
         access !== "true" && navigate("/");
@@ -59,11 +58,11 @@ console.log(selected);
 
                     {/* Contenido de la pestaña desplegable */}
                     {isTabOpen && (
-    <div className={styles.tabContent} style={{ animation: isTabOpen ? 'myAnim 1s ease 0s 1 normal forwards' : 'none' }}>
-        {/* Aquí puedes colocar el contenido de tu pestaña */}
-        Contenido de la pestaña desplegable.
-    </div>
-)}
+                        <div className={styles.tabContent} style={{ animation: isTabOpen ? 'myAnim 1s ease 0s 1 normal forwards' : 'none' }}>
+                            {/* Aquí puedes colocar el contenido de tu pestaña */}
+                            Contenido de la pestaña desplegable.
+                        </div>
+                    )}
                 </div>
                 <div className={styles.header}>
                     <p>Mis Formularios ({userResponses?.length})</p>
@@ -74,28 +73,50 @@ console.log(selected);
                         const handleSubmit = (event) => {
                             event.preventDefault();
                             setSelected(res?.id)
-                            
+
                         };
                         const handleDelete = (event) => {
                             event.preventDefault();
                             Swal.fire({
-                                text: '¿Estas seguro de eliminar?',
                                 icon: 'warning',
+                                title: 'Eliminar',
+                                text: "¿Esta seguro de borrar?",
                                 showConfirmButton: true,
                                 showCancelButton: true,
                                 confirmButtonText: 'Eliminar',
-                                cancelButtonText: 'Volver al Inicio',
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    dispatch(deleteRes(res.id))
-                                    setTimeout(()=>{
-                                    reload()
-                                    },2000);
-                                } else {
-                                    reload();
-                                }
-                            })
-                        }
+                                cancelButtonText: 'Volver',
+                                allowOutsideClick: () => !Swal.isLoading(),
+                                preConfirm: async () => {
+                                    try {
+                                        await dispatch(deleteRes(res?.id));
+                                        await dispatch(getResponses());
+                                        return new Promise((resolve) => {
+                                            setTimeout(() => {
+                                                resolve();
+                                            }, 1000).then(
+                                                setTimeout(() => {
+                                                    Swal.fire({
+                                                        icon: 'success',
+                                                        title: 'Listo!',
+                                                        text: 'Eliminado correctamente.',
+                                                        showConfirmButton: false,
+                                                        timer: 2000,
+                                                    })
+                                                }, 1000)
+                                            )
+                                        });
+                                    } catch (error) {
+                                        console.error(error);
+                                        return Promise.reject();
+                                    }
+                                },
+                            });
+                            if (result.isConfirmed) {
+                                Swal.close();
+                            } else {
+                                navigate("/home");
+                            }
+                        };
                         return (<div className={styles.res}>
                             <p style={{ cursor: "pointer" }} onClick={(event) => handleSubmit(event)}>📝 {form?.title}</p>
                             <button className={styles.delete} type='submit' onClick={(event) => handleDelete(event)}>X</button>
@@ -106,7 +127,7 @@ console.log(selected);
 
             </div>
             <div className={styles.formview}>
-                {selected===null?<h3 style={{color:"white"}}>Selecciona o busca un formulario</h3>:<Update selected={selected}/>}
+                {selected === null ? <h3 style={{ color: "white" }}>Selecciona o busca un formulario</h3> : <Update selected={selected} />}
             </div>
         </div>
     )
