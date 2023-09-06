@@ -17,7 +17,6 @@ export default function NavBar() {
 
     const handleAbout = (event) => {
         event.preventDefault();
-        dispatch(logout());
         navigate(`/about`);
      };
 
