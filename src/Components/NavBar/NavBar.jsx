@@ -15,6 +15,12 @@ export default function NavBar() {
        navigate(`/`);
     };
 
+    const handleAbout = (event) => {
+        event.preventDefault();
+        dispatch(logout());
+        navigate(`/about`);
+     };
+
     const handleHome = (event) => {
         event.preventDefault();
         navigate(`/home`);
@@ -26,7 +32,7 @@ export default function NavBar() {
         <SearchForm />
        <p style={{fontSize:"2vh",marginLeft:"auto",fontWeight:"bold"}}>{userInfo.name}</p>
        <button className={style.button} type='submit' onClick={(event) => handleLogout(event)}>X</button>  
-        <button className={style.button} type='submit' >?</button> 
+        <button className={style.button} type='submit' onClick={(event) => handleAbout(event)}>?</button> 
     </div>
     );
  }
