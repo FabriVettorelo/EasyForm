@@ -32,6 +32,7 @@ console.log(selected);
     }, [access]);
 
     useEffect(() => {
+        localStorage.setItem("form", null);
         dispatch(getResponses());
         dispatch(getForm());
         dispatch(getUserById(myId))
