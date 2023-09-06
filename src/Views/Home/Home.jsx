@@ -88,7 +88,9 @@ console.log(selected);
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     dispatch(deleteRes(res.id))
-                                    setTimeout(reload, 3000);
+                                    setTimeout(()=>{
+                                    reload()
+                                    },2000);
                                 } else {
                                     reload();
                                 }
