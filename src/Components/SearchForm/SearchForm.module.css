@@ -25,14 +25,18 @@
     justify-content: center;
     text-align: center;
     width: 20%;
-    font-size: 2vh;
+    font-size: 1.7vh;
     height: 2.5vh;
     color: white;
-    background-color: rgb(83, 80, 83);;
+    background-color: rgb(83, 80, 83);
     border-radius: 0 2vh 2vh 0;
     cursor: pointer;
     border: none;
     transition: 0.5s;
     font-weight: bold;
     box-shadow: 4px 4px var(--main-color);
+}
+
+.button:hover{
+    background-color: rgb(44, 42, 44); 
 }

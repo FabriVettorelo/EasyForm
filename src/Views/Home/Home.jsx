@@ -78,10 +78,12 @@ const Home = () => {
                         const handleDelete = (event) => {
                             event.preventDefault();
                             Swal.fire({
-                                icon: 'warning',
+                                icon: 'question',
+                                background: '#dfdbdb',
                                 title: 'Eliminar',
                                 text: "¿Esta seguro de borrar?",
                                 showConfirmButton: true,
+                                confirmButtonColor:"rgb(196, 34, 83)",
                                 showCancelButton: true,
                                 confirmButtonText: 'Eliminar',
                                 cancelButtonText: 'Volver',
@@ -97,13 +99,13 @@ const Home = () => {
                                                 setTimeout(() => {
                                                     Swal.fire({
                                                         icon: 'success',
+                                                        background: '#dfdbdb',
                                                         title: 'Listo!',
                                                         text: 'Eliminado correctamente.',
                                                         showConfirmButton: false,
                                                         timer: 2000,
                                                     })
-                                                }, 1000)
-                                            )
+                                                }, 1000))
                                         });
                                     } catch (error) {
                                         console.error(error);

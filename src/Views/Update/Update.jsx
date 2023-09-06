@@ -192,6 +192,7 @@ const Update = ({selected}) => {
                 text: 'Debes completar todos los datos obligatorios',
                 icon: "warning",
                 timerProgressBar: true,
+                background: '#dfdbdb',
                 showConfirmButton: false,
                 timer: 3000,
             })
@@ -203,8 +204,9 @@ const Update = ({selected}) => {
             }
             dispatch(updateResponse(id, update))
             Swal.fire({
-                text: 'Respuestas Modificada!',
+                text: 'Respuestas Modificadas!',
                 icon: 'success',
+                background: '#dfdbdb',
                 showConfirmButton: false,
                 timer: 3000
             })

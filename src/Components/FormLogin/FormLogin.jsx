@@ -45,7 +45,8 @@ const FormLogin = ({ toggleForm, toggleAnimation }) => {
         .then(() => {
           Swal.fire({
             icon: "success",
-            title: "Inicio de sesión exitoso",
+            title: "Iniciaste sesión",
+            background: '#dfdbdb',
             showConfirmButton: false,
             timer: 2000,
           });
@@ -63,6 +64,7 @@ const FormLogin = ({ toggleForm, toggleAnimation }) => {
             Swal.fire({
               icon: "error",
               title: "Error",
+              background: '#dfdbdb',
               text: error.response.data.error,
               showConfirmButton: false,
               timer: 2000
@@ -71,6 +73,7 @@ const FormLogin = ({ toggleForm, toggleAnimation }) => {
             Swal.fire({
               icon: "error",
               title: "Error",
+              background: '#dfdbdb',
               text: error.message,
               showConfirmButton: false,
               timer: 2000
@@ -81,6 +84,7 @@ const FormLogin = ({ toggleForm, toggleAnimation }) => {
       Swal.fire({
         icon: "error",
         title: "Error de validación",
+        background: '#dfdbdb',
         text: "Por favor, complete correctamente todos los campos.",
         showConfirmButton: false,
         timer: 3000,

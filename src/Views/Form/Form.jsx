@@ -159,6 +159,7 @@ const Form = () => {
             Swal.fire({
                 text: 'Completar datos obligatorios!',
                 icon: "warning",
+                background: '#dfdbdb',
                 timerProgressBar: true,
                 showConfirmButton: false,
                 timer: 3000,
@@ -176,6 +177,7 @@ const Form = () => {
                 text: 'Form completado!',
                 icon: 'success',
                 showConfirmButton: false,
+                background: '#dfdbdb',
                 timer: 3000
             }).then(
                 setTimeout(()=>{

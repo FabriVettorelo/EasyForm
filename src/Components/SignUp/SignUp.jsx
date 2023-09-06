@@ -46,7 +46,8 @@ const SignUp = ({ toggleForm, toggleAnimation }) => {
                 .then((response) => {
                     Swal.fire({
                         icon: "success",
-                        title: "Cuenta creada exitosamente",
+                        title: "Cuenta creada!",
+                        background: '#dfdbdb',
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -64,6 +65,7 @@ const SignUp = ({ toggleForm, toggleAnimation }) => {
                         Swal.fire({
                             icon: "error",
                             title: "Error",
+                            background: '#dfdbdb',
                             text: error.response.data.error,
                             showConfirmButton: false,
                             timer: 3000,
@@ -73,6 +75,7 @@ const SignUp = ({ toggleForm, toggleAnimation }) => {
                         Swal.fire({
                             icon: "error",
                             title: "Error",
+                            background: '#dfdbdb',
                             text: error.message,
                             showConfirmButton: false,
                             timer: 3000,
@@ -83,8 +86,9 @@ const SignUp = ({ toggleForm, toggleAnimation }) => {
         } else {
             Swal.fire({
                 icon: "error",
-                title: "Error de validación",
-                text: "Por favor, complete correctamente todos los campos.",
+                title: "Error",
+                text: "Error al validar datos.",
+                background: '#dfdbdb',
                 showConfirmButton: false,
                 timer: 3000,
                 timerProgressBar: true

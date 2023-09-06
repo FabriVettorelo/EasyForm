@@ -29,7 +29,7 @@ export default function NavBar() {
     <div className={style.navbar}>
         <h3 style={{cursor:"pointer"}} onClick={(event) => handleHome(event)}>EasyForm🖊</h3>
         <SearchForm />
-       <p style={{fontSize:"2vh",marginLeft:"auto",fontWeight:"bold"}}>{userInfo.name}</p>
+       <p style={{fontSize:"2vh",marginLeft:"auto",fontWeight:"bold",marginRight:".5vw"}}>{userInfo.name}</p>
        <button className={style.button} type='submit' onClick={(event) => handleLogout(event)}>X</button>  
         <button className={style.button} type='submit' onClick={(event) => handleAbout(event)}>?</button> 
     </div>
