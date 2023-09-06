@@ -13,15 +13,15 @@ const Form = () => {
     const myId = localStorage.getItem("clientId");
     const { id } = useParams();
     const selectedForm = useSelector((state) => state.selectedFormId)
+    const access = localStorage.getItem("form");
+
+    useEffect(() => {
+        access !== id && navigate("/");
+    }, [access]);
 
     useEffect(() => {
         dispatch(getFormById(id));
     }, [dispatch]);
-
-    console.log(selectedForm);
-    const reload = () => {
-        window.location.reload(false);
-    };
 
     const [formValues, setFormValues] = useState({});
     const [formErrors, setFormErrors] = useState({});
