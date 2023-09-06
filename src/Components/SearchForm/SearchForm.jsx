@@ -30,7 +30,9 @@ console.log(allForms);
       const codenum = Number(code)
       dispatch(getFormById(codenum));
       setCode('')
-      if(match === undefined && exists )navigate(`/form/${codenum}`);
+      if(match === undefined && exists ){
+         localStorage.setItem("form", codenum);
+         navigate(`/form/${codenum}`)};
       if(match)alert("Ya has realizado este formulario") ;
       if(!exists)alert("Codigo no valido!");
    };
