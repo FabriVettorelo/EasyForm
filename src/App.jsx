@@ -5,7 +5,7 @@ import Login from './Views/Login/Login'
 import './App.css'
 import NavBar from './Components/NavBar/NavBar'
 import { useLocation } from 'react-router-dom'
-
+import About from './Views/About/About'
 
 function App() {
   const location = useLocation();
@@ -17,7 +17,7 @@ function App() {
         <Route path='/' element={<Login />} />
         <Route path='/home' element={<Home />} />
         <Route path='/form/:id' element={<Form />} />
-        {/* <Route path='/about' element={<About/>} /> */}
+        <Route path='/about' element={<About/>} /> 
       </Routes>
     </div>
 
