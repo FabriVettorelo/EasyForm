@@ -177,8 +177,12 @@ const Form = () => {
                 icon: 'success',
                 showConfirmButton: false,
                 timer: 3000
-            })
-            navigate("/home")
+            }).then(
+                setTimeout(()=>{
+                  navigate("/home")  
+                }, 3000)
+            )
+            
         }
     };
 
