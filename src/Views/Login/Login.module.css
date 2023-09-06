@@ -1,0 +1,225 @@
+body {
+  background-image: url(https://i.pinimg.com/1200x/ed/d7/e4/edd7e46191f50dad75ede470c3b6070f.jpg);
+    background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://i.pinimg.com/1200x/ed/d7/e4/edd7e46191f50dad75ede470c3b6070f.jpg);
+    background-size: cover;
+}
+.column{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border-right: solid 1px rgb(131, 34, 196);
+  background-color:rgb(131, 34, 196);
+}
+.col{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+img{
+  height: 40vh;
+}
+
+.form {
+  align-self: center;
+  position: relative;
+  width: 29vw;
+  height: auto;
+  background-color: white;
+  border: solid 1px #adadad;
+  font-size: 14px;
+  font-family: inherit;
+  color: black;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1vh;
+  padding: 0;
+  box-shadow: 3px 4px 9px 0px rgba(0, 0, 0, 0.75);
+}
+
+.form h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+  margin-bottom: 5vh;
+  font-size: 5vh;
+  text-decoration: underline rgb(131, 34, 196);
+
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+  color: black;
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.btn {
+  border: none;
+  box-shadow: 4px 4px var(--main-color);
+  width: 8vw;
+  height: 6vh;
+  color: white;
+  border-radius: 2vh;
+  transition: 0.5s;
+  transform: translate(0%);
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: rgb(131, 34, 196);
+  ;
+  font-size: 2vh;
+  margin-bottom: 8vh;
+  margin-top: 2vh;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #adadad;
+  border: none;
+  width: 8vw;
+  height: 6vh;
+  color: white;
+  border-radius: 2vh;
+  cursor: auto;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2vh;
+  margin-bottom: 8vh;
+  margin-top: 2vh;
+  background-color: #adadad;
+
+}
+
+.btn:hover:disabled {
+  transform: none;
+  cursor: auto;
+  background-color: #adadad
+}
+
+.btn:hover {
+  transform: translate(0%) scale(1.1);
+  border: none;
+}
+
+.text {
+  gap: 1vh;
+}
+
+.text input {
+  width: 20vw;
+  height: 5vh;
+  border-radius: 1vh;
+  border: 1px solid #adadad;
+  background-color: white;
+  box-shadow: 4px 4px var(--main-color);
+  color: black;
+  padding: 1vh 2vh;
+  outline: none;
+  margin-bottom: 1vh;
+  margin-top: 0;
+  text-align: center;
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+
+.text input:focus {
+  outline: none;
+  border: solid 2px;
+  border-color: rgb(131, 34, 196);
+}
+
+.text input::placeholder {
+
+  color: rgba(0, 0, 0, 0.438);
+  text-align: center;
+  font-size: 2.5vh;
+}
+
+.error {
+  color: rgb(131, 34, 196);
+  font-size: 2vh;
+}
+
+.noerror {
+  color: rgba(255, 255, 255, 0);
+  font-size: 2vh;
+}
+
+.form p {
+  font-weight: bold;
+  text-shadow: 0px 0px var(--main-color), 0px 0px rgba(0, 0, 0, 0.361);
+  text-transform: uppercase;
+  color: rgb(131, 34, 196);
+  text-align: center;
+  margin-top: 0vh;
+  font-size: 1.5vh;
+}
+
+.navlink {
+  text-decoration: none;
+}
+
+.navlink p {
+
+  font-weight: bold;
+  text-shadow: 0px 0px var(--main-color), 0px 0px rgba(242, 242, 242, 0.361);
+  text-transform: uppercase;
+  color: rgb(131, 34, 196);
+  text-align: center;
+  margin-bottom: 2vh;
+  margin-top: 5vh;
+  position: absolute;
+  transform: translate(0%);
+}
+
+.navlink p:hover {
+  transform: translate(0%) scale(1.2);
+}
+
+.account {
+  font-weight: bold;
+  text-shadow: 0px 0px var(--main-color), 0px 0px rgba(242, 242, 242, 0.361);
+  text-transform: uppercase;
+  color: rgb(131, 34, 196);
+  text-align: center;
+  font-size: 3vh;
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  transform: translate(0%);
+
+}
+
+.account p:hover {
+  transform: translate(0%) scale(1.1);
+}

@@ -1,0 +1,38 @@
+.searchbar {
+    display: flex; 
+    align-items: center; 
+    background-color: transparent; 
+    height: 2.5vh;
+    margin-left: 30vw;
+    margin-right: 20vw;
+}
+
+.input {
+    width: 50%;
+    flex: 1; 
+    font-size:2vh;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-align: center;
+    color: black;
+    border-radius: 2vh 0 0 2vh;
+    outline: none;
+    background-color: #dfdbdb;
+}
+
+.button {
+    justify-content: center;
+    text-align: center;
+    width: 20%;
+    font-size: 2vh;
+    height: 2.5vh;
+    color: white;
+    background-color: rgb(83, 80, 83);;
+    border-radius: 0 2vh 2vh 0;
+    cursor: pointer;
+    border: none;
+    transition: 0.5s;
+    font-weight: bold;
+    box-shadow: 4px 4px var(--main-color);
+}

@@ -1,0 +1,168 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    height: 96;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    align-items: center;
+    height: 96vh;
+    background-color: #dfdbdb;
+}
+
+.header {
+    height: 3vh;
+    width: 100%;
+    background-color: rgb(83, 80, 83);
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size: 2vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+.header p {
+    height: 3vh;
+    width: 100%;
+    background-color: rgb(83, 80, 83);
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size: 2vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+.barContainer {
+    margin-top: 1vh;
+    background-color: rgba(245, 245, 220, 0);
+    width: 80%;
+}
+
+.formview {
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    border-color: rgb(196, 166, 34);
+    border-width: 3px;
+    border-style: solid;
+    background-color: rgba(255, 255, 255, 0.199);
+    background-image: url(https://i.pinimg.com/1200x/ed/d7/e4/edd7e46191f50dad75ede470c3b6070f.jpg);
+    background-size: cover;
+}
+
+.res {
+    margin-top: .1vh;
+    height: 3.5vh;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(148, 143, 143, 0.219);
+    color: rgb(0, 0, 0);
+    align-items: center;
+    padding-left: 1vh;
+    font-size: 1.5vh;
+}
+
+.res:hover {
+    margin-top: .1vh;
+    height: 3.5vh;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(148, 143, 143, 0.445);
+    color: rgb(0, 0, 0);
+    align-items: center;
+    padding-left: 1vh;
+    font-size: 1.5vh;
+}
+
+.delete {
+    height: 100%;
+    width: 2vw;
+    margin-left: auto;
+    color: white;
+    font-size: 2vh;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    transform: translate(0%);
+    background-color: rgba(68, 67, 67, 0.336);
+    font-size: 1.7vh;
+}
+
+.delete:hover {
+    height: 100%;
+    width: 2vw;
+    margin-left: auto;
+    color: white;
+    font-size: 2vh;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    transform: translate(0%);
+    font-weight: bold;
+    background-color: rgb(196, 34, 83);
+    font-size: 1.8vh;
+}
+
+.list {
+    width: 100%;
+    overflow: auto;
+    height: 70vh;
+    background-color: #dfdbdb;
+}
+
+@keyframes slideDown {
+    from {
+      max-height: 3vh;
+    }
+    to {
+      max-height: 12vh; 
+    }
+  }
+.filters {
+    width: 100%;
+    height: 3vh;
+    overflow: hidden;
+    animation: slideDown 2s ease
+}
+
+.filtersopen {
+    width: 100%;
+    height: 12vh;
+    overflow: hidden;
+    animation: slideDown 2s ease
+}
+.tab{
+    width: 100%;
+    margin-left: auto;
+    height: 3vh;
+    background-color: rgba(68, 67, 67, 0.336);
+    border: none;
+}
+.block{
+    direction: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+@keyframes myAnim {
+    0% {
+        opacity: 0;
+        transform: rotateX(70deg);
+        transform-origin: top;
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+        transform-origin: top;
+    }
+}

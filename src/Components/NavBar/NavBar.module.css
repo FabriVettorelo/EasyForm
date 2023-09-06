@@ -1,0 +1,39 @@
+.button1{
+    background-color: white;
+    height: 3vh;
+    margin-left: auto;
+    width: 8vw;
+    color: black;
+    font-size: 2vh;
+    border-radius: 1vh;
+    text-transform: uppercase;
+    border: none;
+}
+.button{
+    background-color: #dfdbdb;
+    height: 3vh;
+    margin-left: .1vw;
+    width: 2vw;
+    color: black;
+    font-size: 2vh;
+    text-transform: uppercase;
+    border:none;
+    border-radius:1vw
+}
+img{
+    margin:1vh
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    height: 4vh;
+    background-color: rgb(196, 34, 83);
+    align-items: center;
+    color:white;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+h3{
+    font-size: 3vh;
+}

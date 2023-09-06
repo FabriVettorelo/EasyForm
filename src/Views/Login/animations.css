@@ -1,0 +1,29 @@
+.slide-in {
+    animation: slideInAnim 1s ease-out forwards;
+  }
+  
+  .slide-out {
+    animation: slideOutAnim 1s ease-out forwards;
+  }
+  
+  @keyframes slideInAnim {
+    0% {
+      opacity: 0;
+      transform: translateX(250px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideOutAnim {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-250px);
+    }
+  }
