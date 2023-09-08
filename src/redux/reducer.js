@@ -15,7 +15,7 @@ import { GET_RES_ID } from "./Actions/getResponseById";
 
 const initialState = {
   allForms: [],
-  filteredByNameForm:[],
+  filtered:[],
   user:{},
   selectedFormId:[],
   response: {},
@@ -28,7 +28,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     
     case GET_FORM_NAME:
-      return { ...state , filteredByNameForm: action.payload}; 
+      return { ...state , filtered: action.payload}; 
 
     case GET_FORM_ID:
       return { ...state , selectedFormId:action.payload }; 

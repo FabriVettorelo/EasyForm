@@ -17,6 +17,7 @@ const Home = () => {
     const allResponses = useSelector((state) => state.allResponses)
     const userInfo = useSelector((state) => state.user)
     const allForms = useSelector((state) => state.allForms)
+    const [orderOption, setOrderOption] = useState('reciente')
     const reload = () => {
         window.location.reload(false);
     };
@@ -42,6 +43,20 @@ const Home = () => {
     };
     const tabClassName = isTabOpen ? styles.filtersopen : styles.filters;
 
+    const handleOrderChange = (event) => {
+        setOrderOption(event.target.value);
+    };
+
+    const sortUserResponses = () => {
+        if (orderOption === 'reciente') {
+            return userResponses.slice().sort((a, b) => b.id - a.id);
+        } else if (orderOption === 'antiguo') {
+            return userResponses.slice().sort((a, b) => a.id - b.id);
+        } else {
+            return userResponses.slice();
+        }
+    };
+
     return (
         <div className={styles.home}>
             <div className={styles.info}>
@@ -55,12 +70,16 @@ const Home = () => {
                         </div>
                     }
 
-
-                    {/* Contenido de la pestaña desplegable */}
                     {isTabOpen && (
                         <div className={styles.tabContent} style={{ animation: isTabOpen ? 'myAnim 1s ease 0s 1 normal forwards' : 'none' }}>
-                            {/* Aquí puedes colocar el contenido de tu pestaña */}
-                            Contenido de la pestaña desplegable.
+                            <div style={{ marginTop: "1vh", marginBottom: "1vh" }}>
+                                <select value={orderOption} onChange={handleOrderChange}>
+                                    <option disabled selected>Ordenar</option>
+                                    <option value="reciente">Recientes-Antiguos</option>
+                                    <option value="antiguo">Antiguos-Recientes</option>
+                                </select>
+                            </div>
+                            <div><input type="text" placeholder='Busqueda por Nombre' /></div>
                         </div>
                     )}
                 </div>
@@ -68,7 +87,7 @@ const Home = () => {
                     <p>Mis Formularios ({userResponses?.length})</p>
                 </div>
                 <div className={styles.list}>
-                    {(userResponses?.length > 0) ? userResponses?.map((res) => {
+                    {(userResponses?.length > 0) ? sortUserResponses().map((res) => {
                         const form = allForms.find(e => e.id === res.FormId)
                         const handleSubmit = (event) => {
                             event.preventDefault();
@@ -83,7 +102,7 @@ const Home = () => {
                                 title: 'Eliminar',
                                 text: "¿Esta seguro de borrar?",
                                 showConfirmButton: true,
-                                confirmButtonColor:"rgb(196, 34, 83)",
+                                confirmButtonColor: "rgb(196, 34, 83)",
                                 showCancelButton: true,
                                 confirmButtonText: 'Eliminar',
                                 cancelButtonText: 'Volver',
