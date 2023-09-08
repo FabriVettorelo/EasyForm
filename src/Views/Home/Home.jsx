@@ -18,6 +18,7 @@ const Home = () => {
     const userInfo = useSelector((state) => state.user)
     const allForms = useSelector((state) => state.allForms)
     const [orderOption, setOrderOption] = useState('reciente')
+    const [searchText, setSearchText] = useState('')
     const reload = () => {
         window.location.reload(false);
     };
@@ -25,7 +26,6 @@ const Home = () => {
     const access = localStorage.getItem("access");
     const myId = localStorage.getItem("clientId");
     const userResponses = allResponses.filter(res => Number(res?.UserId) === Number(myId))
-    console.log(selected);
 
     useEffect(() => {
         access !== "true" && navigate("/");
@@ -46,14 +46,25 @@ const Home = () => {
     const handleOrderChange = (event) => {
         setOrderOption(event.target.value);
     };
+    const handleSearchChange = (event) => {
+        setSearchText(event.target.value);
+    };
 
-    const sortUserResponses = () => {
+    const filterAndSortUserResponses = () => {
+        let filteredResponses = userResponses;
+
+        if (searchText.trim() !== '') {
+            filteredResponses = userResponses?.filter((res) => res?.FormId==
+              ( (allForms?.find(form=>form?.title?.toLowerCase().includes(searchText?.toLowerCase()))?.id)) 
+            );
+        }
+
         if (orderOption === 'reciente') {
-            return userResponses.slice().sort((a, b) => b.id - a.id);
+            return filteredResponses.slice().sort((a, b) => b.id - a.id);
         } else if (orderOption === 'antiguo') {
-            return userResponses.slice().sort((a, b) => a.id - b.id);
+            return filteredResponses.slice().sort((a, b) => a.id - b.id);
         } else {
-            return userResponses.slice();
+            return filteredResponses;
         }
     };
 
@@ -78,7 +89,13 @@ const Home = () => {
                                     <option value="antiguo">Antiguos-Recientes</option>
                                 </select>
                             </div>
-                            <div> Búsqueda <input type="text" placeholder='Busqueda por Nombre' /></div>
+                            <div>  Búsqueda
+                <input
+                    type="text"
+                    placeholder='Busqueda por Nombre'
+                    value={searchText}
+                    onChange={handleSearchChange}
+                /></div>
                         </div>
                     )}
                 </div>
@@ -86,7 +103,7 @@ const Home = () => {
                     <p>Mis Formularios ({userResponses?.length})</p>
                 </div>
                 <div className={styles.list}>
-                    {(userResponses?.length > 0) ? sortUserResponses().map((res) => {
+                    {(userResponses?.length > 0) ? filterAndSortUserResponses().map((res) => {
                         const form = allForms.find(e => e.id === res.FormId)
                         const handleSubmit = (event) => {
                             event.preventDefault();
