@@ -73,13 +73,12 @@ const Home = () => {
                     {isTabOpen && (
                         <div className={styles.tabContent} style={{ animation: isTabOpen ? 'myAnim 1s ease 0s 1 normal forwards' : 'none' }}>
                             <div style={{ marginTop: "1vh", marginBottom: "1vh" }}>
-                                <select value={orderOption} onChange={handleOrderChange}>
-                                    <option disabled selected>Ordenar</option>
+                                Ordenamiento <select value={orderOption} onChange={handleOrderChange}>
                                     <option value="reciente">Recientes-Antiguos</option>
                                     <option value="antiguo">Antiguos-Recientes</option>
                                 </select>
                             </div>
-                            <div><input type="text" placeholder='Busqueda por Nombre' /></div>
+                            <div> Búsqueda <input type="text" placeholder='Busqueda por Nombre' /></div>
                         </div>
                     )}
                 </div>
