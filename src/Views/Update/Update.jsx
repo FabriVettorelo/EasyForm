@@ -199,7 +199,7 @@ const Update = ({selected}) => {
         } else {
             let update = {
                 FormId: idForm,
-                UserId: myId,
+                User1Id: myId,
                 formData: formValues
             }
             dispatch(updateResponse(id, update))

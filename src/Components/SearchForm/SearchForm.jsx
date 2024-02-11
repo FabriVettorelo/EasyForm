@@ -13,7 +13,7 @@ export default function SearchForm() {
    const allResponses = useSelector((state) => state.allResponses)
    const myId = localStorage.getItem("clientId");
 
-   const userSavedForms = allResponses?.filter(res=> res?.UserId === Number(myId))
+   const userSavedForms = allResponses?.filter(res=> res?.User1Id === Number(myId))
    
    const match = userSavedForms?.find(res=>res?.FormId=== Number(code) )
   

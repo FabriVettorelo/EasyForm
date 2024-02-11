@@ -169,7 +169,7 @@ const Form = () => {
         } else {
             let response = {
                 FormId: id,
-                UserId: myId,
+                User1Id: myId,
                 formData: formValues
             }
             dispatch(postResponses(response))

@@ -25,7 +25,7 @@ const Home = () => {
 
     const access = localStorage.getItem("access");
     const myId = localStorage.getItem("clientId");
-    const userResponses = allResponses.filter(res => Number(res?.UserId) === Number(myId))
+    const userResponses = allResponses.filter(res => Number(res?.User1Id) === Number(myId))
 
     useEffect(() => {
         access !== "true" && navigate("/");

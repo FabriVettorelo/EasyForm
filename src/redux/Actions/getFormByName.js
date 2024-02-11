@@ -5,7 +5,7 @@ export default function getFormByName(name) {
     return async function (dispatch) {
         try {
             //let result = await axios.get(`https://formserver-t5jb.onrender.com/forms?name=${name}`);
-            let result = await axios.get(` https://easyform-server-production.up.railway.app/forms?name=${name}`);
+            let result = await axios.get(` https://easyformserver.onrender.com/forms?name=${name}`);
            
             if (result.data.length === 0) {
                 alert("Sin Resultados")
